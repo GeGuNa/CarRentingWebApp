@@ -51,4 +51,18 @@ INSERT INTO cars (make, model, year, type, price_per_day, image, description) VA
 INSERT INTO users (name, email, password, role) 
 VALUES ('Super Admin', 'admin@carlink.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin');
 
+ALTER TABLE users ADD COLUMN wallet_balance DECIMAL(10, 2) DEFAULT 0.00;
+ALTER TABLE users ADD COLUMN referral_code VARCHAR(20) UNIQUE;
+
+
+CREATE TABLE transactions (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    amount DECIMAL(10, 2) NOT NULL,
+    type ENUM('deposit', 'withdrawal', 'payment') DEFAULT 'deposit',
+    description VARCHAR(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
 
