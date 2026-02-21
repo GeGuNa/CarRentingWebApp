@@ -44,3 +44,11 @@ INSERT INTO cars (make, model, year, type, price_per_day, image, description) VA
 ('Toyota', 'Camry', 2023, 'Sedan', 50.00, 'https://images.unsplash.com/photo-1621007947382-bb3c3968e3bb?auto=format&fit=crop&w=500&q=60', 'Comfortable sedan for city driving.'),
 ('Ford', 'Mustang', 2022, 'Sports', 120.00, 'https://images.unsplash.com/photo-1584345604476-8ec5e12e42dd?auto=format&fit=crop&w=500&q=60', 'Experience the thrill of speed.'),
 ('Mercedes', 'V-Class', 2023, 'Luxury', 200.00, 'https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=500&q=60', 'Luxury ride for VIPs.');
+
+
+
+-- Password is 'admin123'
+INSERT INTO users (name, email, password, role) 
+VALUES ('Super Admin', 'admin@carlink.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin');
+
+

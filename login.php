@@ -29,7 +29,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['user_role'] = $user['role'];
             
           
-            header("Location: dashboard.php");
+				if ($user['role'] === 'admin') {
+					header("Location: admin_dashboard.php");
+				} else {
+					header("Location: dashboard.php");
+				}
+    
+    
             exit();
         } else {
             $error = "Invalid email or password.";
