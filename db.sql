@@ -6,7 +6,9 @@ CREATE TABLE users (
     password VARCHAR(255) NOT NULL,
     phone VARCHAR(20),
     role ENUM('customer', 'admin') DEFAULT 'customer',
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    reset_token VARCHAR(255) NULL,
+    token_expiry DATETIME NULL
 );
 
 
