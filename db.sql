@@ -66,3 +66,28 @@ CREATE TABLE transactions (
 );
 
 
+
+
+
+
+CREATE TABLE reviews (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    booking_id INT NOT NULL,
+    user_id INT NOT NULL,
+    car_id INT NOT NULL,
+    rating INT NOT NULL CHECK (rating BETWEEN 1 AND 5),
+    review_text TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (booking_id) REFERENCES bookings(id),
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (car_id) REFERENCES cars(id),
+    UNIQUE KEY unique_booking_review (booking_id)
+);
+
+
+ALTER TABLE cars ADD COLUMN average_rating DECIMAL(3,2) DEFAULT 0.00;
+ALTER TABLE cars ADD COLUMN total_reviews INT DEFAULT 0;
+
+
+ALTER TABLE users ADD COLUMN user_rating DECIMAL(3,2) DEFAULT 0.00;
+ALTER TABLE users ADD COLUMN total_user_reviews INT DEFAULT 0;
