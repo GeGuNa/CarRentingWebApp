@@ -75,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <button type="submit" name="update_profile" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">Update Profile</button>
             </form>
         </div>
-
+ 
        
         <div class="bg-white p-8 rounded-xl shadow-lg">
             <h2 class="text-xl font-bold mb-6">Change Password</h2>
